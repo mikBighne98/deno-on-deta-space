@@ -1,0 +1,52 @@
+# Spacefile Docs: https://go.deta.dev/docs/spacefile/v0
+v: 0
+app_name: Deno on Space
+
+micros:
+  - name: deno-alephjs
+    src: ./src/deno-alephjs/
+    engine: custom
+    commands:
+      - apt-get update
+      - apt-get -y install zip
+      - curl -L --fail --location --progress-bar --output out.zip https://github.com/denoland/deno/releases/download/v1.29.4/deno-x86_64-unknown-linux-gnu.zip
+      - unzip -d ./ -o out.zip
+      - chmod +x ./deno
+    presets:
+      env:
+        - name: DENO_DIR
+          description: deno config dir
+          default: "/tmp/deno_dir"
+    run: ./deno run --allow-env --allow-read --allow-write --allow-run --allow-net server.ts
+
+  # - name: deno-fresh
+  #   src: ./src/deno-fresh/
+  #   engine: custom
+  #   commands:
+  #     - apt-get update
+  #     - apt-get -y install zip
+  #     - curl -L --fail --location --progress-bar --output out.zip https://github.com/denoland/deno/releases/download/v1.29.4/deno-x86_64-unknown-linux-gnu.zip
+  #     - unzip -d ./ -o out.zip
+  #     - chmod +x ./deno
+  #   presets:
+  #     env:
+  #       - name: DENO_DIR
+  #         description: deno config dir
+  #         default: "/tmp/deno_dir"
+  #   run: ./deno run --allow-env --allow-read --allow-run --allow-net main.ts
+
+  # - name: deno-crud
+  #   src: ./src/deno-crud/
+  #   engine: custom
+  #   commands:
+  #     - apt-get update
+  #     - apt-get -y install zip
+  #     - curl -L --fail --location --progress-bar --output out.zip https://github.com/denoland/deno/releases/download/v1.29.4/deno-x86_64-unknown-linux-gnu.zip
+  #     - unzip -d ./ -o out.zip
+  #     - chmod +x ./deno
+  #   presets:
+  #     env:
+  #       - name: DENO_DIR
+  #         description: deno config dir
+  #         default: "/tmp/deno_dir"
+  #   run: ./deno run --allow-env --allow-read --allow-write --allow-run --allow-net server.ts

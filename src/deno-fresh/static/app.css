@@ -1,0 +1,15 @@
+body {
+  background-color: #99ffac;
+  background-image: radial-gradient(
+      at 65% 83%,
+      hsla(38, 86%, 60%, 1) 0px,
+      transparent 50%
+    ),
+    radial-gradient(at 90% 19%, hsla(106, 90%, 69%, 1) 0px, transparent 50%),
+    radial-gradient(at 1% 37%, hsla(202, 65%, 78%, 1) 0px, transparent 50%),
+    radial-gradient(at 51% 39%, hsla(77, 95%, 62%, 1) 0px, transparent 50%),
+    radial-gradient(at 9% 12%, hsla(102, 70%, 63%, 1) 0px, transparent 50%),
+    radial-gradient(at 13% 6%, hsla(48, 78%, 62%, 1) 0px, transparent 50%),
+    radial-gradient(at 3% 66%, hsla(356, 87%, 78%, 1) 0px, transparent 50%);
+  height: 100vh;
+}

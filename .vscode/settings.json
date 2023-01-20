@@ -1,0 +1,8 @@
+{
+  "deno.enable": true,
+  "deno.lint": true,
+  "deno.config": "./deno.json",
+  "yaml.schemas": {
+    "https://json.schemastore.org/eslintrc.json": "file:///home/mikun/Codes/Projects/deno-todos/Spacefile"
+  }
+}

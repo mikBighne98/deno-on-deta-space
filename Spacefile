@@ -1,6 +1,6 @@
 # Spacefile Docs: https://go.deta.dev/docs/spacefile/v0
 v: 0
-app_name: Deno on Space
+app_name: Space Deno
 
 micros:
   - name: deno-alephjs
@@ -9,7 +9,7 @@ micros:
     commands:
       - apt-get update
       - apt-get -y install zip
-      - curl -L --fail --location --progress-bar --output out.zip https://github.com/denoland/deno/releases/download/v1.29.4/deno-x86_64-unknown-linux-gnu.zip
+      - curl -L --fail --location --progress-bar --output out.zip https://github.com/denoland/deno/releases/download/v1.32.5/deno-x86_64-unknown-linux-gnu.zip
       - unzip -d ./ -o out.zip
       - chmod +x ./deno
     presets:
@@ -18,6 +18,7 @@ micros:
           description: deno config dir
           default: "/tmp/deno_dir"
     run: ./deno run --allow-env --allow-read --allow-write --allow-run --allow-net server.ts
+    primary: true
 
   # - name: deno-fresh
   #   src: ./src/deno-fresh/
@@ -25,7 +26,7 @@ micros:
   #   commands:
   #     - apt-get update
   #     - apt-get -y install zip
-  #     - curl -L --fail --location --progress-bar --output out.zip https://github.com/denoland/deno/releases/download/v1.29.4/deno-x86_64-unknown-linux-gnu.zip
+  #     - curl -L --fail --location --progress-bar --output out.zip https://github.com/denoland/deno/releases/download/v1.32.5/deno-x86_64-unknown-linux-gnu.zip
   #     - unzip -d ./ -o out.zip
   #     - chmod +x ./deno
   #   presets:
@@ -41,7 +42,7 @@ micros:
   #   commands:
   #     - apt-get update
   #     - apt-get -y install zip
-  #     - curl -L --fail --location --progress-bar --output out.zip https://github.com/denoland/deno/releases/download/v1.29.4/deno-x86_64-unknown-linux-gnu.zip
+  #     - curl -L --fail --location --progress-bar --output out.zip https://github.com/denoland/deno/releases/download/v1.32.5/deno-x86_64-unknown-linux-gnu.zip
   #     - unzip -d ./ -o out.zip
   #     - chmod +x ./deno
   #   presets:
